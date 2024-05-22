@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "migrated": 3,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "twemoji",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FabEthereum",
+      "FasImage",
+      "FabJs"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInFrontmatterEnabled": false,
+    "iconsBackgroundCheckEnabled": false
+  },
+  "ts_notes": "FabJs",
+  "ts_notes/Typescript Notes 38072016e2724a65a6bb080f15073e8a": "FasImage",
+  "Blockchain Notes": "FabEthereum"
+}
