@@ -512,5 +512,3 @@ contract Wallet2 {
 - Contract can have any code you want and that means the power of composability. You can put the contracts together like lego pieces and each contrac can have its own logic built in.
 - Smaller Contracts if the code is split across several contracts. In the particular example above, you don't need to get payments from the wallet contract, you can get the payments from the child contract.
 - Access: Contracts have their own address, can have their own data structures and their own interfaces.
-
-//test to check git
