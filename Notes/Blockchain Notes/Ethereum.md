@@ -598,4 +598,9 @@ contract StractMappingExample{
 }
 ```
 
+## Exception Handling
+### require
+- **Note**: If the require statement turns out to be TRUE the gas fees will be returned back to the user.
+```jsx
 
+```
