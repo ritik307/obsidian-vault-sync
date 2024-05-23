@@ -5,16 +5,16 @@
       "path": "Blockchain Notes/Ethereum.md"
     },
     {
+      "basename": "Typescript Notes",
+      "path": "ts_notes/Typescript Notes.md"
+    },
+    {
       "basename": "Interview Questions",
       "path": "Interview Questions.md"
     },
     {
       "basename": "Pasted image 20240520013852",
       "path": "Blockchain Notes/Images/Pasted image 20240520013852.png"
-    },
-    {
-      "basename": "Typescript Notes",
-      "path": "ts_notes/Typescript Notes.md"
     }
   ],
   "omittedPaths": [],
