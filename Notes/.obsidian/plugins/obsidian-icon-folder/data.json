@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "🖥",
       "FabEthereum",
       "FasImage",
       "FabJs"
@@ -25,5 +26,6 @@
   },
   "ts_notes": "FabJs",
   "ts_notes/Typescript Notes 38072016e2724a65a6bb080f15073e8a": "FasImage",
-  "Blockchain Notes": "FabEthereum"
+  "Blockchain Notes": "FabEthereum",
+  "Interview Questions.md": "🖥"
 }
