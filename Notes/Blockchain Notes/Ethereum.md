@@ -839,6 +839,7 @@ contract ContractTwo {
 ```
 
 - **EXAMPLE 2**
+	- Now we generically send 10 wei to the address "_ contractOne". This can be a smart contract. It can be a wallet. If its a contract it will always call the fallback function. But it will provide enough gas to execute arbitrary logic.
 ```JSX
 // SPDX-License-Identifier: GPL-3.0
 
@@ -854,33 +855,23 @@ contract ContractOne {
 		return address(this).balance;
 	}
 	
-	  
-	
 	receive() external payable {
-	
-	addressBalances[msg.sender] += msg.value;
-	
+		addressBalances[msg.sender] += msg.value;
 	}
 
 }
 
   
-
 contract ContractTwo {
-
-  
-
-function deposit() public payable {}
-
-  
-
-function depositOnContractOne(address _contractOne) public {
-
-(bool success, ) = _contractOne.call{value: 10, gas: 100000}("");
-
-require(success);
-
-}
-
+	
+	function deposit() public payable {}
+	
+	function depositOnContractOne(address _contractOne) public {
+		(bool success, ) = _contractOne.call{value: 10, gas: 100000}("");
+		require(success);
+	}
 }
 ```
+### WARNING
+- Be careful here with so-called re-entrency attacks. If you provide enough gas for the called contract to execute arbitary logic, then its also possible for the smart contract to call back into the calling contract and potentially change state variables.
+- Always try to follow the so-called checks-effects-interactions pattern, where the external smart contract interaction comes last.
