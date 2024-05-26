@@ -760,5 +760,127 @@ Now, let's play around with this:
 - It's always better to let users withdraw money instead of pushing the funds. Consider a game. Two players play against each other. Last round, a player wins. In the normal world, you'd directly _push_ the funds to the winning user. But that's a bad pattern. Better to _credit_ the user and let him _withdraw_ (pull!) the money in a separate withdraw-function later on.
 
 ## Sending More Gas to Smart Contracts
+- it would be great if you can call smart contracts from other smart contracts and also send a value, as a well as, more gas.
+- There are two ways to achieve that:
+	1. External function calls on contract instances
+	2. Low-Level calls on the address
+
+### External Function Calls
+- Sometimes you want to call another smart contract. But not just that, you also want to send eth/wei to another smart contract.
+```jsx
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity 0.8.15;
+
+  
+
+contract ContractOne {
+	mapping(address => uint) public addressBalances;
+	
+	function getBalance() public view returns(uint) {
+		return address(this).balance;
+	}
+	
+	function deposit() public payable {
+		addressBalances[msg.sender] += msg.value;
+	}
+
+}
 
 
+contract ContractTwo {
+
+	function deposit() public payable {}
+	
+	function depositOnContractOne(address _contractOne) public {
+		ContractOne one = ContractOne(_contractOne);
+		one.deposit{value: 10, gas: 100000}();
+	}
+}
+```
+
+## Low-Level Calls on Address-Type Variables
+
+- **EXAMPLE 1**: 
+```jsx
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity 0.8.15;
+
+  
+
+contract ContractOne {
+	mapping(address => uint) public addressBalances;
+	
+	function getBalance() public view returns(uint) {
+		return address(this).balance;
+	}
+
+
+	function deposit() public payable {
+		addressBalances[msg.sender] += msg.value;
+	}
+
+}
+
+  
+
+contract ContractTwo {
+
+	function deposit() public payable {}
+	
+	function depositOnContractOne(address _contractOne) public {
+		bytes memory payload = abi.encodeWithSignature("deposit()");
+		(bool success, ) = _contractOne.call{value: 10, gas: 100000}(payload);
+		require(success);
+	}
+
+}
+```
+
+- **EXAMPLE 2**
+```JSX
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity 0.8.15;
+
+  
+
+contract ContractOne {
+
+	mapping(address => uint) public addressBalances;
+	
+	function getBalance() public view returns(uint) {
+		return address(this).balance;
+	}
+	
+	  
+	
+	receive() external payable {
+	
+	addressBalances[msg.sender] += msg.value;
+	
+	}
+
+}
+
+  
+
+contract ContractTwo {
+
+  
+
+function deposit() public payable {}
+
+  
+
+function depositOnContractOne(address _contractOne) public {
+
+(bool success, ) = _contractOne.call{value: 10, gas: 100000}("");
+
+require(success);
+
+}
+
+}
+```
