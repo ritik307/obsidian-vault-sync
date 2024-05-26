@@ -704,3 +704,61 @@ contract ErrorHandlinhg{
 ```
 
 
+## Difference .send and .transfer
+- If the target address is a contract and the transfer fails, then .transfer will result in an exception and .send will simply return false, but the transaction won't fail.
+```jsx
+//SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.15;
+
+contract Sender {
+
+	receive() external payable {}
+	
+	function withdrawTransfer(address payable _to) public {
+		_to.transfer(10);
+	}
+	
+	function withdrawSend(address payable _to) public {
+		bool sentSuccessful = _to.send(10);
+	}
+
+}
+
+contract ReceiverNoAction {
+
+	function balance() public view returns(uint) {
+		return address(this).balance;
+	}
+	receive() external payable {}
+}
+
+contract ReceiverAction {
+	
+	uint public balanceReceived;
+	
+	function balance() public view returns(uint) {
+		return address(this).balance;
+	}
+	receive() external payable {
+		balanceReceived += msg.value;
+	}
+}
+```
+Now, let's play around with this:
+1. Deploy the `Sender` contract
+2. fund the `Sender` contract with some 100 wei (hit _transact_ to let it go to the receive function)
+3. Deploy the `ReceiverNoAction` and copy the contract address
+4. Send 10 wei to the `ReceiverNoAction` with withdrawTransfer. It works, because the function receive in `ReceiverNoAction` doesn't do anything and doesn't use up more than 2300 gas
+5. Send 10 wei to the `ReceiverNoAction` with withdrawSend. It also works, because the function still does not need more than 2300 gas.
+6. Deploy the `ReceiverAction` Smart contract and copy the contract address
+7. Send 10 Wei to the `ReceiverAction` with withdrawTransfer. It **fails**, because the contract tries to write a storage variable which costs too much gas.
+8. Send 10 Wei to the `ReceiverAction` with withdrawSend. The transaction doesn't fail, but it also doesn't work, which leaves you now in an odd state. 👈🏻 That's the Problem right here.
+
+**Note: Always check the return value of low level send functions**. Ideally with an `require(sentSuccessful)` or so.
+## Pull Over Push
+- It's always better to let users withdraw money instead of pushing the funds. Consider a game. Two players play against each other. Last round, a player wins. In the normal world, you'd directly _push_ the funds to the winning user. But that's a bad pattern. Better to _credit_ the user and let him _withdraw_ (pull!) the money in a separate withdraw-function later on.
+
+## Sending More Gas to Smart Contracts
+
+
