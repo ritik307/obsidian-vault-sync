@@ -875,3 +875,48 @@ contract ContractTwo {
 ### WARNING
 - Be careful here with so-called re-entrency attacks. If you provide enough gas for the called contract to execute arbitary logic, then its also possible for the smart contract to call back into the calling contract and potentially change state variables.
 - Always try to follow the so-called checks-effects-interactions pattern, where the external smart contract interaction comes last.
+
+## Events
+- Events are a way to access this logging facility. This logging facility gives outside applications a way to subscribe to these events through special RPC methods.
+- Events are there to return values from a transaction
+```jsx
+//SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.16;
+
+  
+
+contract EventExample {
+
+  
+
+	mapping(address => uint) public tokenBalance;
+	
+	  
+	
+	event TokensSent(address _from, address _to, uint _amount);
+	
+	  
+	
+	constructor() {
+	
+	tokenBalance[msg.sender] = 100;
+	
+	}
+	
+	  
+	
+	function sendToken(address _to, uint _amount) public returns(bool) {
+	
+		require(tokenBalance[msg.sender] >= _amount, "Not enough tokens");
+		
+		tokenBalance[msg.sender] -= _amount;
+		
+		tokenBalance[_to] += _amount;
+		emit TokensSent(msg.sender, _to, _amount);
+		return true;
+
+	}
+
+}
+```
