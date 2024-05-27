@@ -18,3 +18,6 @@
 })();
 ```
 
+## What's this ABI array? And why do I need it for interacting with smart contracts.
+- ABI stands for Application Binary Interface.
+- 

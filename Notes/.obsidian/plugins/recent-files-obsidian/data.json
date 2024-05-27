@@ -5,12 +5,12 @@
       "path": "Blockchain Notes/web3.js.md"
     },
     {
-      "basename": "Typescript Notes",
-      "path": "ts_notes/Typescript Notes.md"
-    },
-    {
       "basename": "Ethereum",
       "path": "Blockchain Notes/Ethereum.md"
+    },
+    {
+      "basename": "Typescript Notes",
+      "path": "ts_notes/Typescript Notes.md"
     },
     {
       "basename": "Interview Questions",
