@@ -11,8 +11,12 @@
             "id": "30f6ef78544a9517",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Blockchain Notes/web3.js.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -97,6 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Blockchain Notes/web3.js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Blockchain Notes/web3.js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +140,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Blockchain Notes/web3.js.md"
+              }
             }
           },
           {
@@ -180,12 +188,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "5353da60f66014c0",
+  "active": "30f6ef78544a9517",
   "lastOpenFiles": [
+    "ts_notes/Typescript Notes.md",
+    "Blockchain Notes/web3.js.md",
     "Untitled.canvas",
     "2024-05-27.md",
     "Blockchain Notes/Ethereum.md",
-    "ts_notes/Typescript Notes.md",
     "Interview Questions.md",
     "Blockchain Notes/Images/Pasted image 20240521152831.png",
     "Blockchain Notes/Images/Pasted image 20240520013852.png",
