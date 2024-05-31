@@ -18,17 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "2ef38ed33e24ef0d",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,6 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Blockchain Notes/web3.js.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,6 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Blockchain Notes/web3.js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +140,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Blockchain Notes/web3.js.md"
+              }
             }
           },
           {
@@ -193,7 +188,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2ef38ed33e24ef0d",
+  "active": "30f6ef78544a9517",
   "lastOpenFiles": [
     "Blockchain Notes/Ethereum.md",
     "Blockchain Notes/web3.js.md",
