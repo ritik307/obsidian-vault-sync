@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "web3.js",
-      "path": "Blockchain Notes/web3.js.md"
-    },
-    {
       "basename": "Ethereum",
       "path": "Blockchain Notes/Ethereum.md"
+    },
+    {
+      "basename": "web3.js",
+      "path": "Blockchain Notes/web3.js.md"
     },
     {
       "basename": "Typescript Notes",

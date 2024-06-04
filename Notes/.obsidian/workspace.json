@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blockchain Notes/web3.js.md",
+                "file": "Blockchain Notes/Ethereum.md",
                 "mode": "source",
                 "source": false
               }
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blockchain Notes/web3.js.md",
+                "file": "Blockchain Notes/Ethereum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blockchain Notes/web3.js.md",
+                "file": "Blockchain Notes/Ethereum.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blockchain Notes/web3.js.md"
+                "file": "Blockchain Notes/Ethereum.md"
               }
             }
           },
@@ -188,10 +188,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "30f6ef78544a9517",
+  "active": "5353da60f66014c0",
   "lastOpenFiles": [
-    "Blockchain Notes/Ethereum.md",
     "Blockchain Notes/web3.js.md",
+    "Blockchain Notes/Ethereum.md",
     "ts_notes/Typescript Notes.md",
     "Untitled.canvas",
     "2024-05-27.md",
