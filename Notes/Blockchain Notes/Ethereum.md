@@ -927,3 +927,21 @@ contract EventExample {
 - Events cannot be retrieved from with smart contract.
 - Event arguments marked as indexed can be searched for.
 - Events are cheap.
+
+## Inheritance
+- Multiple inheritance
+- Polymorphism
+- Using 'is' keyword
+	- A is X,Y,Z
+	- Z is the most derived contract.
+	- Using 'super' to access the base contract.
+- Inherited contract are deployed as single contract not separate contract.
+- **virtual** defined functions that allow inheriting contract to override them.
+- **override** defines function that are overriding the base function.
+- A function can be both (virtual and override)
+- If you override a function in a base contract you need to define it as **override**.
+
+## Modifiers
+- Change the behaviour of the functions
+- Automatically check a pre-condition
+
