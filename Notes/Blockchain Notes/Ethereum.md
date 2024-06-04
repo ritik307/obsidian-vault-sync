@@ -1099,3 +1099,8 @@ contract EventExample {
 	- Let's update the smart contract and add the "indexed" keyword to the event.
 	- `event TokensSent(address indexed _from, address indexed _to, uint _amount);`
 
+### Key Take Away
+- Events are used for return values, data store or trigger.
+- Events cannot be retrieved from with smart contract.
+- Event arguments marked as indexed can be searched for.
+- Events are cheap.
