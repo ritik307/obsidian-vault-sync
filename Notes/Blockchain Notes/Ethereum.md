@@ -1020,3 +1020,10 @@ contract InheritanceModifierExample is Owned {
 	- `import * as symbolicName from "filename";`
 - Import specific members of a file:
 	- `import {symbol1 as alias,symbol2} from "filename";`
+
+## Monetary or Ether Unit
+- way to write 2 ether in code;
+	-`require(msg.value >= 1000000000000000000 && msg.value <= 2000000000000000000, "msg.value must be between 1 and 2 ether)`
+	-`require(msg.value >= 1e18 && msg.value <= 2e18);`
+	-`require(msg.value >= 1 ether && msg.value <= 2 ether);`
+	
