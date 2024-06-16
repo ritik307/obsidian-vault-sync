@@ -1037,3 +1037,28 @@ uint runUntilTimestamp; uint startTimestamp; constructor(uint startInDays) { sta
 ```jsx
 uint runUntilTimestamp; uint startTimestamp; constructor(uint startInDays) { startTimestamp = block.timestamp + (startInDays * 1 days); runUntilTimestamp = startTimestamp + 7 days; }
 ```
+
+## Destroying Smart Contracts using selfdestruct
+- The data on the blockchain is _forever_, but the **state** is not. That means, we can not erase information from the Blockchain, but we can update the _current state_ so that you can't interact with an address anymore _going forward_. Everyone can always go back in time and check what was the value on day X, but, once the function `selfdestruct()` is called, you can't interact with a Smart Contract anymore.
+#### NOTE:
+- There might be an [Ethereum Protocol update](https://hackmd.io/@HWeNw8hNRimMm2m2GH56Cw/selfdestruct) coming ahead which removes the SELFDESTRUCT functionality all-together. As writing this, it's not out there (yet), but might be soon, so take the following lab with this in mind.
+- The EVM will transfer funds to that address no matter what. So, even if another smart contract is the target address and that smart contract doesn't define a payable receive function, he will still receive the funds.
+
+```jsx
+//SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.15;
+
+contract StartStopUpdateExample {
+	receive() external payable {}
+	
+	function destroySmartContract() public {
+		selfdestruct(payable(msg.sender));
+	}
+}
+```
+
+### How does `selfdestruct` work?
+- It's a function, that takes one argument, an address, which receives all funds stored on the contract address. Then it will remove the contract code from state. The address of the contract is then empty going forward.
+- The contract should be easily readable and the only surprise will be, what happes when you interact with the smart contract after it has been destroyed. Once you call `destroySmartContract`, the address of the Smart Contract will contain no more code. You can still send transactions to the address and transfer Ether there, but there won't be any code that could send you the Ether back.
+
