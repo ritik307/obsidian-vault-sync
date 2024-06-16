@@ -1066,4 +1066,4 @@ contract StartStopUpdateExample {
 - Nowadays the ERC's are called EIPs: Ethereum Improvement Proposals. Because the majority of newcomers did not understand any difference between EIPs and ERCs they were merged. Pepperidge Farmer remembers that EIPs were more Etheruem Protocol update proposals...
 - **What's a fungible token?**
 	- That is, where each token doesn't have any sort of unique serial number and they are all worth equally much. Like Euro or Dollar coins. You take out the coins in your pocket and 50 cents are 50 cents, doesn't matter if the coin is old and used or new and shiny.
-	- 
+	- Same is with ERC20. It doesn't matter if you have token #1 or token #1000000, because internally they are not having any serial number and are indistinguishable from each other.
