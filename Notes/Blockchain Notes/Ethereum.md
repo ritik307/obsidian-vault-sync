@@ -1062,3 +1062,8 @@ contract StartStopUpdateExample {
 - It's a function, that takes one argument, an address, which receives all funds stored on the contract address. Then it will remove the contract code from state. The address of the contract is then empty going forward.
 - The contract should be easily readable and the only surprise will be, what happes when you interact with the smart contract after it has been destroyed. Once you call `destroySmartContract`, the address of the Smart Contract will contain no more code. You can still send transactions to the address and transfer Ether there, but there won't be any code that could send you the Ether back.
 
+## The ERC20 Token
+- Nowadays the ERC's are called EIPs: Ethereum Improvement Proposals. Because the majority of newcomers did not understand any difference between EIPs and ERCs they were merged. Pepperidge Farmer remembers that EIPs were more Etheruem Protocol update proposals...
+- **What's a fungible token?**
+	- That is, where each token doesn't have any sort of unique serial number and they are all worth equally much. Like Euro or Dollar coins. You take out the coins in your pocket and 50 cents are 50 cents, doesn't matter if the coin is old and used or new and shiny.
+	- 
