@@ -1026,4 +1026,14 @@ contract InheritanceModifierExample is Owned {
 	-`require(msg.value >= 1000000000000000000 && msg.value <= 2000000000000000000, "msg.value must be between 1 and 2 ether)`
 	-`require(msg.value >= 1e18 && msg.value <= 2e18);`
 	-`require(msg.value >= 1 ether && msg.value <= 2 ether);`
-	
+- There are three units available: `ether` which basically multiplies the number literal in front with `1e18` `gwei` which stands for `1e9` `wei` which stands for `1`
+
+## Time Units
+- Version 1:
+```jsx
+uint runUntilTimestamp; uint startTimestamp; constructor(uint startInDays) { startTimestamp = block.timestamp + (startInDays * 24 * 60 * 60) runUntilTimestamp = startTimestamp + (7 * 24 * 60 * 60) }
+```
+- Version 2
+```jsx
+uint runUntilTimestamp; uint startTimestamp; constructor(uint startInDays) { startTimestamp = block.timestamp + (startInDays * 1 days); runUntilTimestamp = startTimestamp + 7 days; }
+```
