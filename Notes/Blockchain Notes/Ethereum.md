@@ -1062,8 +1062,44 @@ contract StartStopUpdateExample {
 - It's a function, that takes one argument, an address, which receives all funds stored on the contract address. Then it will remove the contract code from state. The address of the contract is then empty going forward.
 - The contract should be easily readable and the only surprise will be, what happes when you interact with the smart contract after it has been destroyed. Once you call `destroySmartContract`, the address of the Smart Contract will contain no more code. You can still send transactions to the address and transfer Ether there, but there won't be any code that could send you the Ether back.
 
-## The ERC20 Token
-- Nowadays the ERC's are called EIPs: Ethereum Improvement Proposals. Because the majority of newcomers did not understand any difference between EIPs and ERCs they were merged. Pepperidge Farmer remembers that EIPs were more Etheruem Protocol update proposals...
-- **What's a fungible token?**
-	- That is, where each token doesn't have any sort of unique serial number and they are all worth equally much. Like Euro or Dollar coins. You take out the coins in your pocket and 50 cents are 50 cents, doesn't matter if the coin is old and used or new and shiny.
-	- Same is with ERC20. It doesn't matter if you have token #1 or token #1000000, because internally they are not having any serial number and are indistinguishable from each other.
+## The ERC-20 Token
+- **ERC-20** is a standard used for creating and issuing smart contracts on the Ethereum blockchain. These smart contracts can be used to create fungible tokens, which means each token is the same as every other token.
+
+- **Fungible Tokens**: This means that every token is identical in type and value. Think of them like dollars: every $1 bill is worth the same as every other $1 bill.
+
+- **Example**:
+	- **Basic Attention Token (BAT)**: If you own 10 BAT tokens, they are the same as any other 10 BAT tokens that someone else owns. You can trade them, split them up, and each unit of BAT will have the same value.
+
+- **Key Functions of ERC-20**:
+	- **totalSupply**: Gets the total number of tokens in existence.
+	- **balanceOf**: Gets the balance of tokens of a specific address.
+	- **transfer**: Transfers tokens from the sender's address to another address.
+	- **approve**: Allows an address to withdraw tokens from your address.
+	- **transferFrom**: Transfers tokens from one address to another, given prior approval.
+	- **allowance**: Returns the number of tokens that an owner allowed to a spender.
+
+## The ERC-721 Token
+- **ERC-721** is another standard used for creating non-fungible tokens (NFTs) on the Ethereum blockchain. Each ERC-721 token is unique and can represent ownership of a specific item.
+
+- **Non-Fungible Tokens (NFTs)**: This means that each token is unique and not interchangeable with any other token. Think of them like collectibles or art pieces.
+
+- **Example**:
+	- **CryptoKitties**: Each CryptoKitty is a unique digital cat with different attributes. If you own a CryptoKitty, it's one-of-a-kind and can't be exactly replaced by any other CryptoKitty.
+
+- **Key Functions of ERC-721**:
+	- **balanceOf**: Gets the number of NFTs owned by a specific address.
+	- **ownerOf**: Gets the owner of a specific NFT.
+	- **transferFrom**: Transfers ownership of an NFT from one address to another.
+	- **approve**: Approves another address to transfer a specific NFT.
+	- **getApproved**: Gets the approved address for a specific NFT.
+	- **setApprovalForAll**: Approves or disapproves an operator to manage all of the sender's assets.
+	- **isApprovedForAll**: Returns if an operator is approved to manage all of the owner's assets.
+### Summary
+
+- **ERC-20**: For creating fungible tokens where each token is the same as any other token (e.g., cryptocurrencies like BAT, USDT).
+- **ERC-721**: For creating non-fungible tokens where each token is unique and represents a specific item or asset (e.g., CryptoKitties, digital art).
+
+### Real-Life Comparison
+
+- **ERC-20**: Imagine you have a lot of identical poker chips. Each chip is worth the same and can be used interchangeably.
+- **ERC-721**: Imagine you have a collection of unique baseball cards. Each card is different, with its own value and characteristics.
