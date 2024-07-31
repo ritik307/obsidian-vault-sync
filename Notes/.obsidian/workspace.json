@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blockchain Notes/Ethereum.md",
+                "file": "ts_notes/Typescript Notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blockchain Notes/Ethereum.md",
+                "file": "ts_notes/Typescript Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blockchain Notes/Ethereum.md",
+                "file": "ts_notes/Typescript Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blockchain Notes/Ethereum.md"
+                "file": "ts_notes/Typescript Notes.md"
               }
             }
           },
@@ -191,8 +191,8 @@
   "active": "30f6ef78544a9517",
   "lastOpenFiles": [
     "ts_notes/Typescript Notes.md",
-    "Interview Questions.md",
     "Blockchain Notes/Ethereum.md",
+    "Interview Questions.md",
     "Blockchain Notes/web3.js.md",
     "Blockchain Notes/Images/Pasted image 20240604152459.png",
     "Untitled.canvas",
